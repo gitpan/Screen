@@ -1,0 +1,48 @@
+Screen 
+version 1.00
+
+copyright Mark Kaehny 1996
+This package is available under the same guidelines as current perl
+interpreters are. See the "Artistic Licence" in the perl distribution.
+
+See the Screen.pm file for pod documentation. pod2man will create a
+man page. This is a simple terminal control module.
+
+INSTALLATION
+
+1) Make sure your Term::Cap is from 5.002 minimum, and apply the patch
+TCpatch by copying it to the same directory as Term::Cap.pm, and
+running 'patch < TCpatch' or by hand (it is only really two lines
+if you look at it.) This eliminates some warnings perl -w gives.
+The module will run without the patch but you may see some unitialized 
+variable use.
+
+2) Copy Screen.pm to a directory called 'Term' in your perl include path.
+This could be in the standard library itself, or if you can't write there,
+just make your own Term directory and add it to perls include path with
+a 'BEGIN { push @INC "/my/path"; }' or see the perl manual for other 
+ways to do this.
+
+3) You are done and can now use Screen.pm (presuming Term::Cap works
+on your system.) TStest.pl is a test program you can run
+using 'perl TStest.pl'.
+
+OPTIONALLY:
+4) You can create a men page using 'pod2man Screen.pm'
+or make html help using pod2html, or make text help using pod2text, etc.
+
+5) For use if you have funny terminal arrows or function keys, write
+a little sub that adds those keys to the key table, and send me
+the sub with what terminal it describes. 
+
+TO DO:
+
+Make a terminfo version of this so better function key support would be
+built in.
+
+Make an MS-DOS version and a MAC version and an OS/2 version and a VMS 
+version, and ... so we can stop seeing "how can I read one char questions"
+(I am of course insulting Mac folks who don't need this, but ... :)
+
+Mark Kaehny
+kaehny@execpc.com 
